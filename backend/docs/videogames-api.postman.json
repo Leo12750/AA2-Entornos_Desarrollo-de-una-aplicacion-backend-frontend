@@ -1,0 +1,119 @@
+{
+  "info": {
+    "name": "Videogames API",
+    "description": "Colección para probar la API de videojuegos y categorías.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Listar categorias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8081/categories"
+          }
+        },
+        {
+          "name": "Crear categoria",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Aventura\",\n  \"description\": \"Juegos de aventura\"\n}"
+            },
+            "url": "http://localhost:8081/categories"
+          }
+        },
+        {
+          "name": "Editar categoria",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"RPG\",\n  \"description\": \"Juegos de rol\"\n}"
+            },
+            "url": "http://localhost:8081/categories/1"
+          }
+        },
+        {
+          "name": "Eliminar categoria",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "http://localhost:8081/categories/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Videogames",
+      "item": [
+        {
+          "name": "Listar videojuegos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8081/videogames"
+          }
+        },
+        {
+          "name": "Crear videojuego",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Minecraft\",\n  \"platform\": \"PC\",\n  \"release_year\": 2011,\n  \"price\": 19.99,\n  \"category_id\": 1\n}"
+            },
+            "url": "http://localhost:8081/videogames"
+          }
+        },
+        {
+          "name": "Editar videojuego",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Minecraft Java Edition\",\n  \"platform\": \"PC\",\n  \"release_year\": 2011,\n  \"price\": 24.99,\n  \"category_id\": 1\n}"
+            },
+            "url": "http://localhost:8081/videogames/1"
+          }
+        },
+        {
+          "name": "Eliminar videojuego",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "http://localhost:8081/videogames/1"
+          }
+        }
+      ]
+    }
+  ]
+}

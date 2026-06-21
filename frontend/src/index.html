@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Hace que la página se adapte mejor a móviles y pantallas pequeñas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gestión de Videojuegos</title>
+
+  <!-- Archivo CSS con el diseño de la página -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabecera principal de la aplicación -->
+  <header class="header">
+    <h1>Gestión de Videojuegos</h1>
+    <p>Aplicación backend + frontend con Express, SQLite, HTML y JavaScript</p>
+  </header>
+
+  <main class="container">
+    <!-- Sección para gestionar categorías -->
+    <section class="card">
+      <h2>Categorías</h2>
+
+      <!-- Formulario para crear o editar categorías -->
+      <form id="category-form">
+        <!-- Campo oculto. Si tiene valor, significa que estamos editando -->
+        <input type="hidden" id="category-id">
+
+        <label for="category-name">Nombre</label>
+        <input type="text" id="category-name" placeholder="Ej: RPG">
+
+        <label for="category-description">Descripción</label>
+        <input type="text" id="category-description" placeholder="Ej: Juegos de rol">
+
+        <div class="buttons">
+          <button type="submit">Guardar categoría</button>
+          <button type="button" id="cancel-category">Cancelar</button>
+        </div>
+      </form>
+
+      <!-- Aquí JavaScript pintará el listado de categorías -->
+      <div id="categories-list" class="list"></div>
+    </section>
+
+    <!-- Sección para gestionar videojuegos -->
+    <section class="card">
+      <h2>Videojuegos</h2>
+
+      <!-- Formulario para crear o editar videojuegos -->
+      <form id="videogame-form">
+        <!-- Campo oculto. Si tiene valor, significa que estamos editando -->
+        <input type="hidden" id="videogame-id">
+
+        <label for="videogame-title">Título</label>
+        <input type="text" id="videogame-title" placeholder="Ej: Minecraft">
+
+        <label for="videogame-platform">Plataforma</label>
+        <input type="text" id="videogame-platform" placeholder="Ej: PC">
+
+        <label for="videogame-year">Año</label>
+        <input type="number" id="videogame-year" placeholder="Ej: 2024">
+
+        <label for="videogame-price">Precio</label>
+        <input type="number" id="videogame-price" step="0.01" placeholder="Ej: 29.99">
+
+        <label for="videogame-category">Categoría</label>
+        <select id="videogame-category"></select>
+
+        <div class="buttons">
+          <button type="submit">Guardar videojuego</button>
+          <button type="button" id="cancel-videogame">Cancelar</button>
+        </div>
+      </form>
+
+      <!-- Aquí JavaScript pintará el listado de videojuegos -->
+      <div id="videogames-list" class="list"></div>
+    </section>
+  </main>
+
+  <!-- Archivo principal de JavaScript del frontend -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
